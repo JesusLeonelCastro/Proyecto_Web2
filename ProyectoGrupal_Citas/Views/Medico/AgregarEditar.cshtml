@@ -1,0 +1,62 @@
+﻿@model ProyectoGrupal_Citas.Models.Medico
+
+@{
+    ViewBag.Title = "AgregarEditar";
+}
+
+
+<div class="container">
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold mb-4">Informacion de Medicos</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            @using (Html.BeginForm("Guardar", "Medico", FormMethod.Post))
+                            {
+                                <div class="mb-3">
+                                    @Html.Label("Id:", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.idMedico, new { @class = "form-control", id = "disabledTextInput", placeholder = "Disabled input", @readonly = "readonly", style = "background-color: #f0f0f0" })
+                                </div>
+
+
+
+
+                                <div class="mb-3">
+                                    @Html.Label("Dni : ", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.dni, new { @class = "form-control" })
+                                </div>
+                                <div class="mb-3">
+                                    @Html.Label("Nombre : ", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+                                </div>
+                                <div class="mb-3">
+                                    @Html.Label("Apellido : ", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.apellido, new { @class = "form-control" })
+                                </div>
+                                <div class="mb-3">
+                                    @Html.Label("Cmp : ", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.cmp, new { @class = "form-control" })
+                                </div>
+                                <div class="mb-3">
+                                    @Html.Label("Foto:", new { @class = "form-label" })
+                                    <input type="file" name="perfil_img" class="form-control" />
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="~/Medico" class="btn btn-danger">Cancelar</a>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

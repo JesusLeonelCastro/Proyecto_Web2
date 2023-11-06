@@ -1,0 +1,53 @@
+﻿@model ProyectoGrupal_Citas.Models.Medico
+
+@{
+    ViewBag.Title = "Perfil de Usuario";
+}
+<div class="container">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Perfil de Medicos</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            @if (Model.perfil_img != null && Model.perfil_img.Length > 0)
+                            {
+                                @*<img src="data:image;base64,@Convert.ToBase64String(Model.Foto)" alt="Foto de perfil" class="img-fluid rounded-circle" style="max-width: 150px;" />*@
+                            }
+                            else
+                            {
+                                <img src="ruta_imagen_generica.jpg" alt="Foto de perfil genérica" class="img-fluid rounded-circle" style="max-width: 150px;" />
+                            }
+                        </div>
+                        <dl class="row">
+                            <dt class="col-sm-4">ID:</dt>
+                            <dd class="col-sm-8">@Model.idMedico</dd>
+
+                            <dt class="col-sm-4">Nombres:</dt>
+                            <dd class="col-sm-8">@Model.nombre</dd>
+
+                            <dt class="col-sm-4">Apellidos:</dt>
+                            <dd class="col-sm-8">@Model.apellido</dd>
+
+                            <dt class="col-sm-4">Dni:</dt>
+                            <dd class="col-sm-8">@Model.dni</dd>
+
+                            <dt class="col-sm-4">Cmp:</dt>
+                            <dd class="col-sm-8">@Model.cmp</dd>
+
+
+
+
+                        </dl>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="~/Medico/Index" class="btn btn-primary">Volver a la Lista de Medicos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model ProyectoGrupal_Citas.Models.Especialidad
+
+@{
+    ViewBag.Title = "Perfil de Usuario";
+}
+<div class="container">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Perfil de Especialidad</h2>
+                    </div>
+                    <div class="card-body">
+                        
+                        <dl class="row">
+                            <dt class="col-sm-4">ID:</dt>
+                            <dd class="col-sm-8">@Model.idEspecialidad</dd>
+
+                            <dt class="col-sm-4">Nombres:</dt>
+                            <dd class="col-sm-8">@Model.nombre</dd>
+
+                            
+
+
+
+
+                        </dl>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="~/Especialidad/Index" class="btn btn-primary">Volver a la Lista de Especialidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

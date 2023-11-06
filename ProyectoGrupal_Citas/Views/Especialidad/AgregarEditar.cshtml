@@ -1,0 +1,45 @@
+﻿@model ProyectoGrupal_Citas.Models.Especialidad
+
+@{
+    ViewBag.Title = "AgregarEditar";
+}
+
+
+<div class="container">
+
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title fw-semibold mb-4">Informacion de Especialidad</h5>
+                    <div class="card">
+                        <div class="card-body">
+                            @using (Html.BeginForm("Guardar", "Especialidad", FormMethod.Post))
+                            {
+                                <div class="mb-3">
+                                    @Html.Label("Id:", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.idEspecialidad, new { @class = "form-control", id = "disabledTextInput", placeholder = "Disabled input", @readonly = "readonly", style = "background-color: #f0f0f0" })
+                                </div>
+
+
+
+
+                                <div class="mb-3">
+                                    @Html.Label("Especialidad : ", new { @class = "form-label" })
+                                    @Html.TextBoxFor(x => x.nombre, new { @class = "form-control" })
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="~/Especialidad" class="btn btn-danger">Cancelar</a>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

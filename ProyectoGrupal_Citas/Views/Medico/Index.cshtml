@@ -1,0 +1,58 @@
+﻿@model List<ProyectoGrupal_Citas.Models.Medico>
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<center><h1><b>Gestionar Medico</b></h1></center>
+<div class="container">
+    <p class="card-header" style="font-size:15px"><a href="~/Medico/AgregarEditar/" class="btn btn-secondary"> <i class="fas fa-plus"></i> Nuevo Medico</a> <br /><br /></p>
+
+    @using (Html.BeginForm("Index", "Medico", FormMethod.Post))
+    {
+        <div class="text-end">
+            @Html.Label("Buscar: ")
+            @Html.TextBox("nombre")
+            <button type="submit" class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    }
+    <br />
+
+    <table id="HyV" class="table">
+        <thead>
+            <tr>
+                <th style="width:20px">Id</th>
+                <th style="width:50px">dni</th>
+                <th style="width:150px">Nombres</th>
+                <th style="width:150px">Apellidos</th>
+                <th style="width:20px">Cmp</th>
+                <th style="width:50px">Perfil</th>
+                
+                <th style="width:290px">Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <th>@(m.idMedico)</th>
+                    <th>@(m.dni)</th>
+
+                    <th>@(m.nombre)</th>
+                    <th>@(m.apellido)</th>
+                    <th>@(m.cmp)</th>
+                    <th>@(m.perfil_img)</th>
+
+                    <th>
+                        <a href="~/Medico/Ver/@m.idMedico" class="btn btn-sm btn-warning"><i class="fa-solid fa-eye"></i></a>
+                        <a href="~/Medico/AgregarEditar/@m.idMedico" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> </a>
+                        <a onclick="return confirm('¿Esta seguro de eliminar el registro?');" href="~/Medico/Eliminar/@m.idMedico" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+
+                    </th>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
